@@ -21,24 +21,24 @@ namespace Hometask3
             {
                 case "+":
                     {
-                        Console.WriteLine("Результат вычислений: {0} {1} {2} = {3}", x1, key, x2, (x1 + x2).ToString("0.00"));
+                        Out(x1, key, x2, Add(x1, x2).ToString("0.00"));
                         break;
                     }
                 case "-":
                     {
-                        Console.WriteLine("Результат вычислений: {0} {1} {2} = {3}", x1, key, x2, (x1 - x2).ToString("0.00"));
+                        Out(x1, key, x2, Sub(x1, x2).ToString("0.00"));
                         break;
                     }
                 case "*":
                     {
-                        Console.WriteLine("Результат вычислений: {0} {1} {2} = {3}", x1, key, x2, (x1 * x2).ToString("0.00"));
+                        Out(x1, key, x2, Mult(x1, x2).ToString("0.00"));
                         break;
                     }
                 case "/":
                     {
                         if (x2 != 0)
                         {
-                            Console.WriteLine("Результат вычислений: {0} {1} {2} = {3}", x1, key, x2, (x1 / x2).ToString("0.00"));
+                            Out(x1, key, x2, Div(x1, x2).ToString("0.00"));
                         }
                         else
                         {
@@ -53,6 +53,31 @@ namespace Hometask3
                     }
             }
             Console.ReadLine();
+        }
+
+        public static double Mult (double x1, double x2)
+        {
+            return x1 * x2;
+        }
+
+        public static double Div (double x1, double x2)
+        {
+            return x1 / x2;
+        }
+
+        public static double Add (double x1, double x2)
+        {
+            return x1 + x2;
+        }
+
+        public static double Sub (double x1, double x2)
+        {
+            return x1 - x2;
+        }
+
+        public static void Out(double x1, string str1, double x2, string str2)
+        {
+            Console.WriteLine("Результат вычислений: {0} {1} {2} = {3}", x1, str1, x2, str2);
         }
     }
 }
